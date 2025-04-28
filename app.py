@@ -12,7 +12,7 @@ try:
     with open("dtc_Model.pkl", "rb") as f:
         model_data = pickle.load(f)
         dtc_model = model_data['model']  # Ambil model dari dictionary
-        scaler = model_data['scaler']  # Ambil scaler dari dictionary
+        scaler = model_data['scaler']  # Ambil scaler dari dictionaryuv
 
 except FileNotFoundError as e:
     raise HTTPException(status_code=500, detail=f"Error loading model or scaler: {str(e)}")
@@ -26,7 +26,7 @@ class SleepData(BaseModel):
     quality_of_sleep: float
     physical_activity_level: float
     stress_level: float
-    bmi_category: int  # 0 untuk 'Normal', 1 untuk 'Overweight', 2 untuk 'Obese'
+    bmi_category: int  # 0 untuk 'Normal', 1 untuk 'Overweight', 2 untuk 'Obese'++
     heart_rate: float
 
     class Config:
